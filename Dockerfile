@@ -13,7 +13,8 @@ RUN apk update \
 	&& apk add ansible git python openssh py3-netaddr
 
 ADD entrypoint.sh /srv
-RUN echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config \
+RUN mkdir -p ~/.ssh/config \
+	&& echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config \
 	&& chmod +x /srv/entrypoint.sh
 
 
