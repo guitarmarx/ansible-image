@@ -1,5 +1,7 @@
 #!/bin/sh
 
+chmod -R  400 ~/.ssh/*
+
 # clone repository
 git clone -q $GIT_REPO ansible
 cd ansible

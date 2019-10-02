@@ -12,13 +12,12 @@ docker build  -t <image_name>:<image_version>
 #### Run Container
 ```sh
 docker run -d \
-        -p 80:80 \
-        -e ENVIRONMENT="<environment>" \
-		-e GIT_REPO="<ssh github repository link>" \
-		-e VAULT_PASSWORD="<vault password>" \
-		-e SUDO_PASSWORD="<become password>" 
-        -v <private key>:/root/.ssh/id_rsa:ro \
-        <image>:<version>
+	-e ENVIRONMENT="<environment>" \
+	-e GIT_REPO="<ssh github repository link>" \
+	-e VAULT_PASSWORD="<vault password>" \
+	-e SUDO_PASSWORD="<become password>" 
+	-v <private key>:/root/.ssh/id_rsa:ro \
+	<image>:<version>
 ```
 
 ## Configuration
