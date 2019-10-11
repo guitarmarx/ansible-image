@@ -7,7 +7,8 @@ WORKDIR /srv
 ENV ENVIRONMENT="" \
 	GIT_REPO="" \
 	VAULT_PASSWORD="" \
-	SUDO_PASSWORD="" 
+	SUDO_PASSWORD="" \
+	ANSIBLE_FORCE_COLOR=true
 
 RUN apk update \
 	&& apk add ansible git python openssh py3-netaddr
