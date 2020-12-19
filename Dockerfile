@@ -13,6 +13,12 @@ ENV ENVIRONMENT="" \
 RUN apk update \
 	&& apk add ansible git python openssh py3-netaddr
 
+RUN ansible-galaxy collection install \
+		community.kubernetes \
+		community.general \
+		ansible.posix \
+		community.kubernetes
+
 ADD entrypoint.sh /srv
 RUN mkdir -p ~/.ssh/ \
 	&& echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config \
