@@ -17,8 +17,7 @@ RUN ansible-galaxy collection install \
 		community.kubernetes \
 		community.general \
 		ansible.posix \
-		community.kubernetes \
-		community.general.modprobe
+		community.kubernetes
 
 ADD entrypoint.sh /srv
 RUN mkdir -p ~/.ssh/ \
