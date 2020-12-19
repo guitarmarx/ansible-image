@@ -11,13 +11,9 @@ ENV ENVIRONMENT="" \
 	ANSIBLE_FORCE_COLOR=true
 
 RUN apk update \
-	&& apk add ansible git python openssh py3-netaddr
+	&& apk add ansible git python3 openssh py3-netaddr
 
-RUN ansible-galaxy collection install \
-		community.kubernetes \
-		community.general \
-		ansible.posix \
-		community.kubernetes
+RUN ansible-galaxy collection install community.kubernetes community.general ansible.posix community.kubernetes
 
 ADD entrypoint.sh /srv
 RUN mkdir -p ~/.ssh/ \
